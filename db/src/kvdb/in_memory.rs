@@ -128,4 +128,7 @@ impl KeyValueDB for InMemory {
             "Attempted to restore in-memory database".into(),
         ))
     }
+
+    fn close(&self) {
+    }
 }
