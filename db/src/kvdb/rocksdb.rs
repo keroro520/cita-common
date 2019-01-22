@@ -595,7 +595,7 @@ impl Database {
     pub fn close(&self) {
         info!(
             "bilibili database close flushing.len() : {}",
-            self.flushing().read().len()
+            self.flushing.read().len()
         );
         *self.db.write() = None;
         self.overlay.write().clear();
