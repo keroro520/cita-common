@@ -594,6 +594,11 @@ impl Database {
     /// Close the database
     pub fn close(&self) {
         *self.db.write() = None;
+        {
+            if self.flushing.read().len() != 0 {
+                panic!("bilibili flushing.len() != 0");
+            }
+        }
         self.overlay.write().clear();
         self.flushing.write().clear();
     }
