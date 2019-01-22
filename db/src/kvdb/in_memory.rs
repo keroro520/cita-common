@@ -129,6 +129,5 @@ impl KeyValueDB for InMemory {
         ))
     }
 
-    fn close(&self) {
-    }
+    fn close(&self) {}
 }
